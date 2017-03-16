@@ -1,3 +1,3 @@
 module.exports = {
-  jwtSecret: 'gonzo'
+  jwtSecret: process.env.APP_SECRET
 }
