@@ -1,5 +1,6 @@
 const Comment = require("../models").Comment;
 const Photo = require("../models").Link;
+const User = require("../models").User;
 
 module.exports = {
   create (req, res) {

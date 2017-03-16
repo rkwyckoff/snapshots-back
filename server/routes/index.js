@@ -20,8 +20,8 @@ module.exports = (app) => {
   // //app.get('/links', LinkController.listUsers);
    app.get('/photos', PhotoController.listPhotos);
   // app.post('/link/:id/comment', middleware.authenticate, CommentController.create )
-  // app.get('/link/:id/comment', CommentController.listComments )
-   app.get('/comments', CommentController.listallComments )
+   app.get('/photos/:id/comment', CommentController.listComments )
+   //app.get('/comments', CommentController.listallComments )
 
 
 
