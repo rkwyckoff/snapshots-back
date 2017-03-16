@@ -16,7 +16,7 @@ module.exports = (app) => {
   // //app.post('/authenticate', middleware.authenticate);
   // app.post('/link', middleware.authenticate, LinkController.create )
   // //app.get('/users/:id', middleware.authenticate, UserController.findUser);
-  // app.get('/users', UserController.listUsers);
+   app.get('/users', UserController.listUsers);
   // //app.get('/links', LinkController.listUsers);
   // app.get('/link', LinkController.listLinks);
   // app.post('/link/:id/comment', middleware.authenticate, CommentController.create )
