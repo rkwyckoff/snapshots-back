@@ -25,7 +25,7 @@ module.exports = {
     .then(photo => res.status(201).send(photo))
     .catch(error => res.status(400).send(error));
 
-  }
+  },
 
   clickPhoto (req, res) {
 
@@ -35,7 +35,7 @@ module.exports = {
       .then(user => {
         photo.user = user;
         res.status(200).send(photo);
-      }))
+      })
   })
 }
 }
