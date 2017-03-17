@@ -19,7 +19,7 @@ module.exports = (app) => {
 //List all photos on Home page
   app.get('/photos', PhotoController.listPhotos);
 //List one photo when clicked on
-  // app.get('/photos/:id', PhotoController.listPhoto);
+  app.get('/photos/:id', PhotoController.listPhoto);
 //Post a comment on 1 photo
   app.post('/photos/:id/comment', middleware.authenticate, CommentController.create )
 //List all comments for 1 photo
