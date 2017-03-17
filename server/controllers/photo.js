@@ -34,7 +34,9 @@ module.exports = {
       User.findById(photo.user_id)
       .then(user => {
         photo.user = user;
-        res.status(200).send(photo, user);
+        res.status(200).send(photo)
+        .then(res.status(200).send(user))
+
       })
   })
 }
