@@ -21,7 +21,7 @@ module.exports = {
 
   listComments (req, res) {
       Comment.findAll({
-      link_id: req.params.id
+      photo_id: req.params.id
       })
       .then(comment => res.status(200).send(comment))
       .catch(error => res.status(400).send(error));

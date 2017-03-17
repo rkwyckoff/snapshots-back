@@ -24,12 +24,8 @@ module.exports = (app) => {
   app.post('/photos/:id/comment', middleware.authenticate, CommentController.create )
 //List all users
   app.get('/users', UserController.listUsers);
-
-
-
-
-
-  // app.get('/photos/:id/comment', CommentController.listComments )
+//List all comments for 1 photo
+  app.get('/photos/:id/comment', CommentController.listComments )
   // app.get('/comments', CommentController.listallComments )
 
 
