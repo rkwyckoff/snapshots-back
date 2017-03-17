@@ -8,7 +8,7 @@ module.exports = {
     Comment.create({
       text: req.body.comment,
       user_id: req.user.id,
-      photo_id: req.params.photo.id,
+      photo_id: req.params.id,
     })
       .then(comment => res.status(201).send(comment))
       .catch(error => res.status(400).send(error));
