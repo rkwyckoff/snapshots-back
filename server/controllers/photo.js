@@ -18,7 +18,14 @@ module.exports = {
       })
       .then(photo => res.status(200).send(photo))
       .catch(error => res.status(400).send(error));
-  }
+  },
 
+  listPhoto (req, res,) {
+    Photo.findById(req.params.id) {
+    }
+
+    .then(photo => res.status(201).send(photo))
+    .catch(error => res.status(400).send(error));
+  }
 
 };

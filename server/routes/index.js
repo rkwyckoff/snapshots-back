@@ -13,15 +13,18 @@ module.exports = (app) => {
 
   app.post('/users', UserController.register);
   app.post('/login', UserController.login);
-  // //app.post('/authenticate', middleware.authenticate);
   app.post('/photos', middleware.authenticate, PhotoController.create )
-  // //app.get('/users/:id', middleware.authenticate, UserController.findUser);
-   app.get('/users', UserController.listUsers);
-  // //app.get('/links', LinkController.listUsers);
-   app.get('/photos', PhotoController.listPhotos);
+  app.get('/photos', PhotoController.listPhotos);
+  app.get('/photos/:id', PhotoController.listPhoto);
+
+  app.get('/users', UserController.listUsers);
+
+
+
+
   // app.post('/link/:id/comment', middleware.authenticate, CommentController.create )
-   app.get('/photos/:id/comment', CommentController.listComments )
-   //app.get('/comments', CommentController.listallComments )
+  app.get('/photos/:id/comment', CommentController.listComments )
+  app.get('/comments', CommentController.listallComments )
 
 
 
