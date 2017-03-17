@@ -28,22 +28,12 @@ module.exports = {
   },
 
   clickPhoto (req, res) {
+    Photo.findById(req.params.id, {
+      include: {
+        model: User,
+        attributes: ['username']
+      }
+    })
 
-    Photo.findById(req.params.id)
-    .then(photo => {
-      User.findById(photo.user_id)
-      .then(user => {
-        photo.user = user;
-        res.status(200).send(photo)
-        .then(res.status(200).send(user))
-
-      })
-  })
+  }
 }
-}
-// Photo.findById(req.params.id, {
-//   include: {
-//     model: User,
-//     attributes: ['username', 'email', 'id']
-//   }
-// })
