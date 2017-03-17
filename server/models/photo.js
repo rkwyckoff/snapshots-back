@@ -1,6 +1,6 @@
 'use strict';
 
-const User = require("../models").User;
+//const User = require("../models").User;
 
 module.exports = function(sequelize, DataTypes) {
   var Photo = sequelize.define('Photo', {
@@ -14,6 +14,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  Photo.belongsTo(User);
+  //Photo.belongsTo(User);
   return Photo;
 };
