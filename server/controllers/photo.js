@@ -26,4 +26,22 @@ module.exports = {
     .catch(error => res.status(400).send(error));
 
   }
-};
+
+  clickPhoto (req, res) {
+
+    Photo.findById(req.params.id)
+    .then(photo => {
+      User.findById(photo.user_id)
+      .then(user => {
+        photo.user = user;
+        res.status(200).send(photo);
+      }))
+  })
+}
+}
+// Photo.findById(req.params.id, {
+//   include: {
+//     model: User,
+//     attributes: ['username', 'email', 'id']
+//   }
+// })

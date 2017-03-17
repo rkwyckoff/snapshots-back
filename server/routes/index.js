@@ -19,17 +19,20 @@ module.exports = (app) => {
 //List all photos on Home page
   app.get('/photos', PhotoController.listPhotos);
 //List one photo when clicked on
-  app.get('/photos/:id', PhotoController.listPhoto);
-//Post a comment on a photo
+  // app.get('/photos/:id', PhotoController.listPhoto);
+//Post a comment on 1 photo
   app.post('/photos/:id/comment', middleware.authenticate, CommentController.create )
-//List all users
-  app.get('/users', UserController.listUsers);
 //List all comments for 1 photo
   app.get('/photos/:id/comment', CommentController.listComments )
-  // app.get('/comments', CommentController.listallComments )
+//List all users
+  app.get('/users', UserController.listUsers);
+//List one photo when clicked on including username
+  app.get('/photos/:id', PhotoController.clickPhoto);
 
 
 
+
+// app.get('/comments', CommentController.listallComments )
 //  app.post('/shelters/:shelterId/animals', AnimalController.create);
 //  app.put('/shelters/:shelterId/animals/:id', AnimalController.update);
 };
