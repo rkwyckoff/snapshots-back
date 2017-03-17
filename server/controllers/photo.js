@@ -9,7 +9,7 @@ module.exports = {
       title: req.body.title,
       user_id: req.user.id
     })
-      .then(photo => res.status(201).send(link))
+      .then(photo => res.status(201).send(photo))
       .catch(error => res.status(400).send(error));
   },
     listPhotos (req, res) {
