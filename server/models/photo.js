@@ -13,8 +13,9 @@ module.exports = function(sequelize, DataTypes) {
           User.hasMany(models.Photo, {
             foreignKey: 'userId'
           });
-    }
-  });
+    })
+  };
   Photo.belongsTo(User);
   return Photo;
-};
+}
+}
