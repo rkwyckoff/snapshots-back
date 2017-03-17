@@ -6,9 +6,9 @@ module.exports = {
   create (req, res) {
     console.log(req.user)
     Comment.create({
-      comment: req.body.comment,
+      text: req.body.comment,
       user_id: req.user.id,
-      photo_id: req.params.id,
+      photo_id: req.params.photo.id,
     })
       .then(comment => res.status(201).send(comment))
       .catch(error => res.status(400).send(error));

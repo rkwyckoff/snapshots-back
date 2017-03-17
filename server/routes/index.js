@@ -10,21 +10,27 @@ module.exports = (app) => {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-
+//Register user
   app.post('/users', UserController.register);
+//Login user
   app.post('/login', UserController.login);
+//Post a photo--must be logged in
   app.post('/photos', middleware.authenticate, PhotoController.create )
+//List all photos on Home page
   app.get('/photos', PhotoController.listPhotos);
+//List one photo when clicked on
   app.get('/photos/:id', PhotoController.listPhoto);
-
+//Post a comment on a photo
+  app.post('/photos/:id/comment', middleware.authenticate, CommentController.create )
+//List all users
   app.get('/users', UserController.listUsers);
 
 
 
 
-  // app.post('/link/:id/comment', middleware.authenticate, CommentController.create )
-  app.get('/photos/:id/comment', CommentController.listComments )
-  app.get('/comments', CommentController.listallComments )
+
+  // app.get('/photos/:id/comment', CommentController.listComments )
+  // app.get('/comments', CommentController.listallComments )
 
 
 
