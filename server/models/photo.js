@@ -10,12 +10,10 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-          User.hasMany(models.Photo, {
-            foreignKey: 'userId'
-          });
-    })
-  };
+        // associations can be defined here
+      }
+    }
+  });
   Photo.belongsTo(User);
   return Photo;
-}
-}
+};
