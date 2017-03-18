@@ -9,10 +9,7 @@ module.exports = {
       text: req.body.comment,
       user_id: req.user.id,
       photo_id: req.params.id,
-      include: {
-        model: User, attributes: ['username']
-        //{model: Comment}
-      }
+
 
     })
       .then(comment => res.status(201).send(comment))
@@ -29,7 +26,11 @@ module.exports = {
   listComments (req, res) {
      Comment.findAll({
         where: {
-         photo_id:req.params.id
+         photo_id:req.params.id,
+         include: {
+           model: User, attributes: ['username']
+           //{model: Comment}
+         }
          }
       })
      .then(comment => res.status(200).send(comment))
