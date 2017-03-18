@@ -1,5 +1,6 @@
 const Photo = require("../models").Photo;
 const User = require("../models").User;
+const Comment = require("../models").Comment;
 
 module.exports = {
   create (req, res) {
@@ -29,10 +30,10 @@ module.exports = {
 
   clickPhoto (req, res) {
     Photo.findById(req.params.id, {
-      include: {
-        model: User,
-        attributes: ['username']
-      }
+      include: [
+        {model: User, attributes: ['username']},
+        {model: Comment}
+      ]
     })
     .then(photo => res.status(201).send(photo))
     .catch(error => res.status(400).send(error));

@@ -30,11 +30,8 @@ module.exports = (app) => {
   app.get('/photos/:id', PhotoController.clickPhoto);
 //Delete a photo per id
   app.post('/photos/:id/delete', PhotoController.deletePhoto);
-//Delete a comment per id
+//Delete comment per photo id
   app.post('/comment/:id/delete', CommentController.deleteComment);
-//List all comments
-  app.get('/comments', CommentController.listallComments );
-
 
 
 
