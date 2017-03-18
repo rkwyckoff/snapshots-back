@@ -23,11 +23,20 @@ module.exports = (app) => {
 //Post a comment on 1 photo
   app.post('/photos/:id/comment', middleware.authenticate, CommentController.create )
 //List all comments for 1 photo
-  app.get('/photos/:id/comment', CommentController.listComments )
+  app.get('/photos/:id/comments', CommentController.listComments )
 //List all users
   app.get('/users', UserController.listUsers);
 //List one photo when clicked on including username
   app.get('/photos/:id', PhotoController.clickPhoto);
+//Delete a photo per id
+  app.post('/photos/:id/delete', PhotoController.deletePhoto);
+//Delete a comment per id
+  app.post('/comment/:id/delete', CommentController.deleteComment);
+//List all comments
+  app.get('/comments', CommentController.listallComments );
+
+
+
 
 
 
