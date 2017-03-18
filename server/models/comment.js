@@ -2,8 +2,8 @@
 module.exports = function(sequelize, DataTypes) {
   var Comment = sequelize.define('Comment', {
     text: DataTypes.STRING,
-    user_id: DataTypes.STRING,
-    photo_id: DataTypes.STRING
+    user_id: DataTypes.INTEGER,
+    photo_id: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
