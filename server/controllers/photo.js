@@ -32,7 +32,9 @@ module.exports = {
     Photo.findById(req.params.id, {
       include: [
         {model: User, attributes: ['username']},
-        {model: Comment}
+        {model: Comment, include: {
+          model: User, attributes: ['username']
+       }}
       ]
     })
     .then(photo => res.status(201).send(photo))
