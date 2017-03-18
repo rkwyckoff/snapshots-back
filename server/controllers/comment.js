@@ -20,18 +20,31 @@ module.exports = {
   // }
 
   listComments (req, res) {
-      Comment.findAll({
-      photo_id: req.params.id
+     Comment.findAll({
+        where: {
+         photo_id:req.params.id
+         }
       })
-      .then(comment => res.status(200).send(comment))
-      .catch(error => res.status(400).send(error));
-  },
+     .then(comment => res.status(200).send(comment))
+     .catch(error => res.status(400).send(error));
+   },
+
   listallComments (req, res) {
       Comment.findAll({
 
       })
       .then(comment => res.status(200).send(comment))
       .catch(error => res.status(400).send(error));
-  }
+  },
+  deleteComment (req, res) {
+     Comment.destroy({
+        where: {
+         id:req.params.id
+         }
+      })
+     .then(comment => res.status(200).send(comment))
+     .catch(error => res.status(400).send(error));
+   }
+
 
 };

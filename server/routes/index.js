@@ -19,15 +19,21 @@ module.exports = (app) => {
 //List all photos on Home page
   app.get('/photos', PhotoController.listPhotos);
 //List one photo when clicked on
-  app.get('/photos/:id', PhotoController.listPhoto);
+  app.get('/photos/:id', PhotoController.clickPhoto);
 //Post a comment on 1 photo
   app.post('/photos/:id/comment', middleware.authenticate, CommentController.create )
 //List all comments for 1 photo
-  app.get('/photos/:id/comment', CommentController.listComments )
+  app.get('/photos/:id/comments', CommentController.listComments )
 //List all users
   app.get('/users', UserController.listUsers);
 //List one photo when clicked on including username
   app.get('/photos/:id', PhotoController.clickPhoto);
+//Delete a photo per id
+  app.post('/photos/:id/delete', PhotoController.deletePhoto);
+//Delete comment per photo id
+  app.post('/comment/:id/delete', CommentController.deleteComment);
+
+
 
 
 
