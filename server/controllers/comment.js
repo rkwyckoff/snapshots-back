@@ -9,10 +9,10 @@ module.exports = {
       text: req.body.comment,
       user_id: req.user.id,
       photo_id: req.params.id,
-      include: [
-        {model: User, attributes: ['username']},
+      include: {
+        model: User, attributes: ['username']
         //{model: Comment}
-      ]
+      }
 
     })
       .then(comment => res.status(201).send(comment))
