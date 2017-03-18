@@ -11,7 +11,7 @@ module.exports = {
       photo_id: req.params.id,
       include: [
         {model: User, attributes: ['username']},
-        {model: Comment}
+        //{model: Comment}
       ]
 
     })
