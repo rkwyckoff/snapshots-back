@@ -27,11 +27,11 @@ module.exports = {
      Comment.findAll({
         where: {
          photo_id:req.params.id,
+       },
          include: {
            model: User, attributes: ['username']
-           //{model: Comment}
-         }
-         }
+
+        }
       })
      .then(comment => res.status(200).send(comment))
      .catch(error => res.status(400).send(error));
