@@ -9,10 +9,17 @@ module.exports = {
       text: req.body.comment,
       user_id: req.user.id,
       photo_id: req.params.id,
+      include: [
+        {model: User, attributes: ['username']},
+        {model: Comment}
+      ]
+
     })
       .then(comment => res.status(201).send(comment))
       .catch(error => res.status(400).send(error));
   },
+
+
   // findComment (req, res) {
   //     Comment.findById(req.params.id)
   //     .then(comments => res.status(201).send(comments))
