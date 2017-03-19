@@ -35,30 +35,7 @@ Route 7: List all comments on a photo (by photo_id)
 GET(https://intense-woodland-38140.herokuapp.com/photos/:id/comment)
 
 Route 8: Delete a photo (by photo_id)
-GET(https://intense-woodland-38140.herokuapp.com/photos/:id/comment)
-app.post('/photos/:id/delete', PhotoController.deletePhoto);
+POST(https://intense-woodland-38140.herokuapp.com/photos/:id/delete)
 
-
-
-
-
-
-
-
-
-
-
-//Delete a photo per id
-app.post('/photos/:id/delete', PhotoController.deletePhoto);
-//Delete comment per photo id
-app.post('/comment/:id/delete', CommentController.deleteComment);
-
-
-
-
-
-
-// app.get('/comments', CommentController.listallComments )
-//  app.post('/shelters/:shelterId/animals', AnimalController.create);
-//  app.put('/shelters/:shelterId/animals/:id', AnimalController.update);
-};
+Route 9: Delete a comment (by photo_id)
+POST(https://intense-woodland-38140.herokuapp.com/comment/:id/delete)
